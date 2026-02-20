@@ -5,14 +5,17 @@ import Link from "next/link"
 import { Menu, X, Phone, Mail } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
+import Image from "next/image" 
 
-const navLinks = [
-  { href: "#inicio", label: "Inicio" },
-  { href: "#conocenos", label: "Conócenos" },
-  { href: "#servicios", label: "Servicios" },
-  { href: "#ventajas", label: "Por qué elegirnos" },
-  { href: "#contacto", label: "Contacto" },
+
+ const navLinks = [
+  { href: "/#inicio", label: "Inicio" },
+  { href: "/#conocenos", label: "Conócenos" },
+  { href: "/#porque-elegirnos", label: "¿Por qué elegirnos?" }, 
+  { href: "/#servicios", label: "Servicios" },       
+  { href: "/empresas", label: "Empresas" },
 ]
+
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -34,11 +37,11 @@ export function Header() {
           <div className="flex items-center gap-6">
             <a href="tel:+576028895271" className="flex items-center gap-2 hover:text-accent transition-colors">
               <Phone className="h-4 w-4" />
-              <span>(602) 889-5271</span>
+              <span>(602) 889-5271 - (602) 485-2318</span>
             </a>
             <a href="mailto:administrador@marthajmejia.com" className="flex items-center gap-2 hover:text-accent transition-colors">
               <Mail className="h-4 w-4" />
-              <span>administrador@marthajmejia.com</span>
+              <span>servicioalcliente@marthajmejia.com</span>
             </a>
           </div>
           <p className="text-secondary/80">Más de 20 años de experiencia</p>
@@ -56,16 +59,14 @@ export function Header() {
       >
         <nav className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
-            {/* Logo */}
-            <Link href="#inicio" className="flex items-center gap-3 group">
-              <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-white font-serif font-bold text-lg group-hover:scale-105 transition-transform">
-                MJM
-              </div>
-              <div className="hidden sm:block">
-                <h1 className="font-serif font-bold text-primary text-lg leading-tight">Martha J. Mejía</h1>
-                <p className="text-xs text-muted-foreground">Abogados & Asociados</p>
-              </div>
-            </Link>
+            {/* Logo modificado */}
+              <Link href="/" className="flex items-center gap-10 group">
+                <img 
+                  src="/logo7mjm.png" 
+                  alt="Logo MJM" 
+                  className="w-62 h-38 object-contain group-hover:scale-110 transition-transform"
+                />
+              </Link>
 
             {/* Desktop Navigation */}
             <div className="hidden lg:flex items-center gap-8">

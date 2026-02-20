@@ -1,11 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  typescript: {
-    ignoreBuildErrors: true,
-  },
+  output: 'export', // <-- ESTA LÍNEA ES LA MÁS IMPORTANTE
   images: {
-    unoptimized: true,
+    unoptimized: true, // Necesario para que las imágenes carguen en GoDaddy
   },
-}
+};
 
-export default nextConfig
+export default nextConfig;

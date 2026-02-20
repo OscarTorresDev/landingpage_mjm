@@ -1,6 +1,7 @@
 "use client"
 
 import { CheckCircle, Scale, BarChart3, Briefcase, Shield, Clock, Award, Users } from "lucide-react"
+import Image from "next/image"
 
 const advantages = [
   {
@@ -20,12 +21,6 @@ const advantages = [
     title: "Reportes Detallados",
     description: "Sistema de seguimiento y reportes en tiempo real para mantenerlo informado.",
     highlight: "Tiempo real"
-  },
-  {
-    icon: Briefcase,
-    title: "Sin Riesgo Inicial",
-    description: "Modelo de comisión por éxito, solo paga cuando recuperamos su cartera.",
-    highlight: "Por éxito"
   }
 ]
 
@@ -33,39 +28,37 @@ const stats = [
   { value: "20+", label: "Años de experiencia", icon: Award },
   { value: "95%", label: "Tasa de recuperación", icon: CheckCircle },
   { value: "1000+", label: "Clientes satisfechos", icon: Users },
-  { value: "24/7", label: "Soporte disponible", icon: Shield }
 ]
 
 export function AdvantagesSection() {
   return (
-    <section id="ventajas" className="py-24 bg-white relative overflow-hidden">
-      {/* Background decoration */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
-      
-      <div className="container mx-auto px-6 relative">
-        {/* Section Header */}
-        <div className="max-w-3xl mx-auto text-center mb-16">
-          <span className="inline-block text-primary font-semibold tracking-wider uppercase text-sm mb-4">
-            Nuestras Ventajas
-          </span>
-          <h2 className="font-serif text-4xl md:text-5xl font-bold text-foreground mb-6 text-balance">
+    <section id="porque-elegirnos" className="py-24 bg-white relative overflow-hidden">
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="/imagen4.jpg" 
+          alt="Fondo"
+          fill
+          className="object-cover opacity-60" 
+          priority
+        />
+      </div>
+
+      <div className="absolute inset-0 bg-blue-850/30" />
+     
+      <div className="container mx-auto px-10 relative z-20">
+        <div className="max-w-3xl mx-auto text-center mb-15">
+            <h2 className="font-serif text-4xl md:text-5xl font-bold text-black mb-6 text-balance">
             ¿Por Qué Elegirnos?
           </h2>
-          <p className="text-muted-foreground text-lg leading-relaxed">
-            Somos su aliado estratégico en la recuperación de cartera. Nuestra experiencia 
-            y compromiso nos distinguen en el mercado.
-          </p>
         </div>
 
-        {/* Advantages Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
+        {/* --- CAMBIO AQUÍ: justify-center, mx-auto y max-w-max para centrar --- */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10 justify-center mx-auto max-w-max">
           {advantages.map((advantage, index) => (
             <div 
               key={index}
-              className="group relative bg-muted rounded-2xl p-6 hover:shadow-xl transition-all duration-300 overflow-hidden"
+              className="group relative bg-muted rounded-2xl p-8 hover:shadow-xl transition-all duration-300 overflow-hidden max-w-[350px]"
             >
-              {/* Highlight badge */}
               <div className="absolute top-4 right-4">
                 <span className="inline-block bg-accent/10 text-accent text-xs font-bold px-3 py-1 rounded-full">
                   {advantage.highlight}
@@ -76,11 +69,11 @@ export function AdvantagesSection() {
                 <advantage.icon className="w-7 h-7 text-primary group-hover:text-white transition-colors" />
               </div>
               
-              <h3 className="font-serif text-xl font-bold text-foreground mb-3">
+              <h3 className="font-serif text-xl font-bold text-black mb-3">
                 {advantage.title}
               </h3>
               
-              <p className="text-muted-foreground text-sm leading-relaxed">
+              <p className="text-black text-sm leading-relaxed">
                 {advantage.description}
               </p>
             </div>
@@ -88,36 +81,17 @@ export function AdvantagesSection() {
         </div>
 
         {/* Stats Section */}
-        <div className="bg-gradient-to-r from-[#0d2a61] to-[#1264ad] rounded-3xl p-8 md:p-12">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="bg-white/10 backdrop-blur-md border border-white/10 rounded-3xl p-4 md:p-6 shadow-xl max-w-5xl mx-auto">
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-2">
             {stats.map((stat, index) => (
               <div key={index} className="text-center">
-                <div className="w-16 h-16 mx-auto rounded-2xl bg-white/10 flex items-center justify-center mb-4">
-                  <stat.icon className="w-8 h-8 text-accent" />
+                <div className="w-16 h-16 mx-auto rounded-2xl bg-blue-950/20 flex items-center justify-center mb-4">
+                  <stat.icon className="w-8 h-8 text-blue-950" />
                 </div>
-                <p className="text-4xl md:text-5xl font-bold text-white mb-2">{stat.value}</p>
-                <p className="text-white/70 text-sm">{stat.label}</p>
+                <p className="text-4xl md:text-5xl font-bold text-black mb-2">{stat.value}</p>
+                <p className="text-black/90 text-sm">{stat.label}</p>
               </div>
             ))}
-          </div>
-        </div>
-
-        {/* Trust Indicators */}
-        <div className="mt-16 text-center">
-          <p className="text-muted-foreground mb-6">Operamos con total apego a la ley</p>
-          <div className="flex flex-wrap justify-center gap-8 items-center opacity-60">
-            <div className="flex items-center gap-2 text-foreground">
-              <Shield className="w-6 h-6" />
-              <span className="font-medium">Datos Protegidos</span>
-            </div>
-            <div className="flex items-center gap-2 text-foreground">
-              <Scale className="w-6 h-6" />
-              <span className="font-medium">Cumplimiento Legal</span>
-            </div>
-            <div className="flex items-center gap-2 text-foreground">
-              <Award className="w-6 h-6" />
-              <span className="font-medium">Ética Profesional</span>
-            </div>
           </div>
         </div>
       </div>

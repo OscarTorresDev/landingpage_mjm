@@ -3,17 +3,21 @@
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Shield, Scale, Users } from "lucide-react"
 import Link from "next/link"
+import Image from "next/image"
+
 
 export function HeroSection() {
   return (
     <section id="inicio" className="relative min-h-[90vh] flex items-center overflow-hidden">
-      {/* Background with gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#0d2a61] via-[#164191] to-[#1264ad]">
-        {/* Subtle pattern overlay */}
-        <div className="absolute inset-0 opacity-10" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fillRule='evenodd'%3E%3Cg fill='%23ffffff' fillOpacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
-        }} />
-      </div>
+     {/* Background Image */}
+        <div className="absolute inset-0">
+          <img
+            src="/cobranzas.jpg" /* reemplace con imagen requerida  */
+            alt="Fondo"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-blue-950/80" />
+        </div>
 
       <div className="container relative mx-auto px-6 py-20">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -31,26 +35,15 @@ export function HeroSection() {
             </h1>
 
             <p className="text-lg md:text-xl text-white/90 leading-relaxed max-w-xl">
-              Somos especialistas en gestión de cobranzas con una comunicación directa, 
-              clara y respetuosa de la normativa vigente hacia el consumidor financiero.
+             Somos especialistas en gestión de cobranza y recaudo de cartera vencida del sector financiero y comercial público o privado, mediante el cobro prejudicial y Judicial, garantizando en todo momento la aplicación de la normatividad Legal vigente que rige nuestra misión. 
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button 
-                asChild 
-                size="lg" 
-                className="bg-accent hover:bg-accent/90 text-foreground font-semibold px-8 py-6 text-lg"
-              >
-                <Link href="#contacto">
-                  Solicitar Asesoría
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
-              </Button>
-              <Button 
+                 <Button 
                 asChild 
                 variant="outline" 
                 size="lg" 
-                className="border-white/30 text-white hover:bg-white/10 px-8 py-6 text-lg bg-transparent"
+                className="bg-accent hover:bg-accent/90 text-foreground font-semibold px-8 py-6 text-lg"
               >
                 <Link href="#conocenos">Conocer Más</Link>
               </Button>
@@ -58,10 +51,6 @@ export function HeroSection() {
 
             {/* Stats */}
             <div className="grid grid-cols-3 gap-6 pt-8 border-t border-white/20">
-              <div>
-                <p className="text-3xl md:text-4xl font-bold text-accent">20+</p>
-                <p className="text-sm text-white/70">Años de experiencia</p>
-              </div>
               <div>
                 <p className="text-3xl md:text-4xl font-bold text-accent">100%</p>
                 <p className="text-sm text-white/70">Compromiso ético</p>
@@ -78,8 +67,8 @@ export function HeroSection() {
             <div className="space-y-4">
               <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300 hover:-translate-y-1">
                 <Scale className="h-10 w-10 text-accent mb-4" />
-                <h3 className="font-serif font-semibold text-white text-lg mb-2">Gestión Jurídica</h3>
-                <p className="text-white/70 text-sm">Acompañamiento legal especializado en procesos de cobranza judicial.</p>
+                <h3 className="font-serif font-semibold text-white text-lg mb-2">Gestión Pre jurídica y Jurídica</h3>
+                <p className="text-white/70 text-sm">Acompañamiento Legal especializado en procesos de cobranza desde la etapa persuasiva hasta la etapa Judicial.</p>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300 hover:-translate-y-1">
                 <Shield className="h-10 w-10 text-accent mb-4" />
@@ -93,10 +82,10 @@ export function HeroSection() {
                 <h3 className="font-serif font-semibold text-white text-lg mb-2">Equipo Experto</h3>
                 <p className="text-white/70 text-sm">Profesionales capacitados y en constante actualización legal.</p>
               </div>
-              <div className="bg-accent/90 rounded-2xl p-6 hover:bg-accent transition-all duration-300 hover:-translate-y-1">
-                <p className="font-serif font-bold text-foreground text-2xl mb-2">¿Necesita recuperar su cartera?</p>
-                <p className="text-foreground/80 text-sm mb-4">Contáctenos hoy mismo</p>
-                <Button asChild variant="secondary" className="w-full bg-white hover:bg-white/90 text-foreground">
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300 hover:-translate-y-1">
+                <p className="font-serif font-bold text-white text-2xl mb-2">¿Necesita recuperar su cartera?</p>
+                <p className="text-white text-sm mb-4">Contáctenos hoy mismo</p>
+                <Button asChild variant="secondary" className="bg-accent hover:bg-accent/90 text-foreground font-semibold px-8 py-6 text-lg">
                   <Link href="#contacto">Contactar</Link>
                 </Button>
               </div>

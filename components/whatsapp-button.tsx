@@ -23,7 +23,7 @@ export function WhatsAppButton() {
     }
   }, [])
 
-  const whatsappUrl = "https://wa.me/573117719474?text=Hola,%20deseo%20solicitar%20información%20sobre%20sus%20servicios%20de%20cobranza"
+  const whatsappUrl = "https://wa.me/573225135833?text=Hola,%20deseo%20solicitar%20información%20sobre%20sus%20servicios%20de%20cobranza"
 
   return (
     <>

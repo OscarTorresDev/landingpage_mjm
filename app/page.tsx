@@ -13,8 +13,8 @@ export default function Home() {
       <Header />
       <HeroSection />
       <AboutSection />
+      <AdvantagesSection />      
       <ServicesSection />
-      <AdvantagesSection />
       <ContactSection />
       <Footer />
       <WhatsAppButton />
